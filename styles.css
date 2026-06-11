@@ -12,7 +12,6 @@
 body { font-family: 'Nunito', sans-serif; background: #1a1a1a; color: #fff; min-height: 100vh; }
 
 /* ── VIDEO HERO ── */
-.video-hero video { width: 100%; max-height: 620px; object-fit: cover; display: block; }
 .video-upload-placeholder {
   width: 100%; min-height: 340px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -26,11 +25,11 @@ body { font-family: 'Nunito', sans-serif; background: #1a1a1a; color: #fff; min-
 .video-hero-overlay {
   position: absolute; bottom: 0; left: 0; right: 0;
   background: linear-gradient(transparent, rgba(0,0,0,0.7));
-  padding: 60px; text-align: center; pointer-events: none;
+  padding: 20px; text-align: center; pointer-events: none;
 }
 .video-hero-overlay h2 {
-  font-family: 'Bangers', cursive; font-size: 50px; letter-spacing: 2px; color: #f5c518;
-  text-shadow: 2px 5px 0 #000;
+  font-family: 'Bangers', cursive; font-size: clamp(22px, 5vw, 50px); letter-spacing: 2px; color: #f5c518;
+  text-shadow: 2px 3px 0 #000;
 }
 
 /* ── CHECKERED ── */
@@ -57,12 +56,13 @@ body { font-family: 'Nunito', sans-serif; background: #1a1a1a; color: #fff; min-
 .cloud-3::after{width:28px;height:28px;top:-12px;left:30px;}
 
 /* ── FOTO PRINCIPAL ── */
+/* ── FOTO PRINCIPAL ── */
 .foto-principal-wrap {
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 0;
-  margin-top: -350px;
+  margin-top: -120px;
   position: relative;
   z-index: 2;
 }
@@ -71,10 +71,18 @@ body { font-family: 'Nunito', sans-serif; background: #1a1a1a; color: #fff; min-
   width: 100%;
   background: #000;
   aspect-ratio: 9/16;
-  max-height: 620px;
+  max-height: 70vh;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
   z-index: 2;
+}
+.video-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .checkered {
   width: 100%; height: 0px;
@@ -247,4 +255,15 @@ body { font-family: 'Nunito', sans-serif; background: #1a1a1a; color: #fff; min-
   .gallery-grid { grid-template-columns: repeat(2,1fr); }
   .gallery-item.featured { grid-column: span 2; }
   .date-box .value { font-size:38px; }
+}
+
+/* Responsividade da foto principal e vídeo */
+@media(min-width:401px) and (max-width:768px) {
+  .foto-principal-wrap { margin-top: -150px; }
+  .video-hero { max-height: 60vh; }
+}
+
+@media(min-width:769px) {
+  .foto-principal-wrap { margin-top: -350px; }
+  .video-hero { max-height: 620px; }
 }
