@@ -36,7 +36,7 @@ function confirmPresence(e) {
  * @returns {void}
  */
 document.addEventListener('DOMContentLoaded', function () {
-  // Splash screen: desaparece após 3.5 segundos (1s a mais)
+  // Splash screen: desaparece após 2.5 segundos
   const splash = document.getElementById('splashScreen');
   if (splash) {
     setTimeout(function () {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(function () {
         splash.remove();
       }, 1500);
-    }, 3500);
+    }, 2500);
   }
 
   // Lightbox: abrir foto ao clicar na galeria
