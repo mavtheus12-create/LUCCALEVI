@@ -12,14 +12,6 @@
 body { font-family: 'Nunito', sans-serif; background: #1a1a1a; color: #fff; min-height: 100vh; }
 
 /* ── VIDEO HERO ── */
-.video-hero {
-  position: relative;
-  width: 100%;
-  background: #000;
-  min-height: 300px;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-}
 .video-hero video { width: 100%; max-height: 620px; object-fit: cover; display: block; }
 .video-upload-placeholder {
   width: 100%; min-height: 340px;
@@ -34,18 +26,14 @@ body { font-family: 'Nunito', sans-serif; background: #1a1a1a; color: #fff; min-
 .video-hero-overlay {
   position: absolute; bottom: 0; left: 0; right: 0;
   background: linear-gradient(transparent, rgba(0,0,0,0.7));
-  padding: 20px; text-align: center; pointer-events: none;
+  padding: 60px; text-align: center; pointer-events: none;
 }
 .video-hero-overlay h2 {
-  font-family: 'Bangers', cursive; font-size: 28px; letter-spacing: 2px; color: #f5c518;
-  text-shadow: 2px 2px 0 #000;
+  font-family: 'Bangers', cursive; font-size: 50px; letter-spacing: 2px; color: #f5c518;
+  text-shadow: 2px 5px 0 #000;
 }
 
 /* ── CHECKERED ── */
-.checkered {
-  width: 100%; height: 28px;
-  background-image: repeating-linear-gradient(90deg, #000 0, #000 28px, #fff 28px, #fff 56px);
-}
 
 /* ── MAIN CARD ── */
 .main-card { background: #faf6ee; color: #333; position: relative; }
@@ -67,6 +55,38 @@ body { font-family: 'Nunito', sans-serif; background: #1a1a1a; color: #fff; min-
 .cloud-3{width:70px;height:22px;top:15px;left:40%;}
 .cloud-3::before{width:36px;height:36px;top:-18px;left:8px;}
 .cloud-3::after{width:28px;height:28px;top:-12px;left:30px;}
+
+/* ── FOTO PRINCIPAL ── */
+.foto-principal-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: -350px;
+  position: relative;
+  z-index: 2;
+}
+.video-hero {
+  position: relative;
+  width: 100%;
+  background: #000;
+  aspect-ratio: 9/16;
+  max-height: 620px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+}
+.checkered {
+  width: 100%; height: 0px;
+  background-image: repeating-linear-gradient(90deg, #000 0, #000 28px, #fff 28px, #fff 56px);
+  position: relative;
+  z-index: 2;
+}
+.foto-principal {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* ── NAME ── */
 .name-section { padding: 32px 24px 16px; text-align: center; }
@@ -175,6 +195,24 @@ body { font-family: 'Nunito', sans-serif; background: #1a1a1a; color: #fff; min-
 .confirm-section { padding:28px 20px 36px; text-align:center; }
 .confirm-section h2 { font-family:'Bangers',cursive; font-size:32px; color:#c0392b; letter-spacing:2px; margin-bottom:8px; }
 .confirm-section p { font-size:15px; color:#666; margin-bottom:20px; }
+.aviso-importante {
+  background: #fff;
+  border: 2px solid #f5c518;
+  border-left: 5px solid #c0392b;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 16px auto 24px;
+  max-width: 480px;
+  text-align: left;
+}
+.aviso-importante p {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.aviso-importante p:last-child { margin-bottom: 0; }
+.aviso-importante strong { color: #c0392b; }
 .btn-confirm {
   display:inline-flex; align-items:center; gap:8px;
   background:#25D366; color:#fff;
