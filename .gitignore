@@ -1,0 +1,10 @@
+# IDE / Editor
+.vscode/
+.kiro/
+
+# Sistema
+Thumbs.db
+.DS_Store
+
+# Arquivos grandes (subir manualmente via Git LFS ou pelo dono)
+assets/carros1.mp4
