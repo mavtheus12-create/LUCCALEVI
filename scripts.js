@@ -36,17 +36,42 @@ function confirmPresence(e) {
  * @returns {void}
  */
 document.addEventListener('DOMContentLoaded', function () {
-  // Splash screen: desaparece após 2.5 segundos
+  // Splash screen: desaparece após 3.5 segundos (1s a mais)
   const splash = document.getElementById('splashScreen');
   if (splash) {
     setTimeout(function () {
       splash.classList.add('fade-out');
-      // Remove do DOM após a transição terminar
       setTimeout(function () {
         splash.remove();
-      }, 1000);
-    }, 2500);
+      }, 1500);
+    }, 3500);
   }
+
+  // Lightbox: abrir foto ao clicar na galeria
+  const galleryItems = document.querySelectorAll('.gallery-item img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  galleryItems.forEach(function (img) {
+    img.addEventListener('click', function () {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('active');
+    });
+  });
+
+  // Fechar lightbox pelo botão X
+  lightboxClose.addEventListener('click', function () {
+    lightbox.classList.remove('active');
+  });
+
+  // Fechar lightbox ao clicar no fundo
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+    }
+  });
 });
 
 // Expor função no escopo global para compatibilidade com onclick inline
