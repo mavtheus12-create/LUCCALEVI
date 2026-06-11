@@ -36,9 +36,17 @@ function confirmPresence(e) {
  * @returns {void}
  */
 document.addEventListener('DOMContentLoaded', function () {
-  // A função confirmPresence é chamada via onclick inline no HTML,
-  // mas mantemos o listener aqui para futuras expansões do projeto.
-  console.log('Convite Lucca Levi carregado com sucesso! 🏎️');
+  // Splash screen: desaparece após 2.5 segundos
+  const splash = document.getElementById('splashScreen');
+  if (splash) {
+    setTimeout(function () {
+      splash.classList.add('fade-out');
+      // Remove do DOM após a transição terminar
+      setTimeout(function () {
+        splash.remove();
+      }, 1000);
+    }, 2500);
+  }
 });
 
 // Expor função no escopo global para compatibilidade com onclick inline
