@@ -17,7 +17,7 @@
   justify-content: center;
   z-index: 9999;
   opacity: 1;
-  transition: opacity 1.5s ease-out;
+  transition: opacity 2s ease-out;
 }
 .splash-screen.fade-out {
   opacity: 0;
@@ -31,6 +31,11 @@
   letter-spacing: 3px;
   text-align: center;
   padding: 20px;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+.splash-text.visible {
+  opacity: 1;
 }
 
 /* ── RESET ── */
@@ -74,7 +79,7 @@ body { font-family: 'Nunito', sans-serif; background: #1a1a1a; color: #fff; min-
   left: 0;
 }
 .checkered {
-  width: 100%; height: 0px;
+  width: 100%; height: 28px;
   background-image: repeating-linear-gradient(90deg, #000 0, #000 28px, #fff 28px, #fff 56px);
   position: relative;
   z-index: 2;

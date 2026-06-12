@@ -36,14 +36,21 @@ function confirmPresence(e) {
  * @returns {void}
  */
 document.addEventListener('DOMContentLoaded', function () {
-  // Splash screen: desaparece após 2.5 segundos
+  // Splash screen: texto aparece com fade-in, depois tudo some
   const splash = document.getElementById('splashScreen');
-  if (splash) {
+  const splashText = document.querySelector('.splash-text');
+  if (splash && splashText) {
+    // Fade-in do texto após 0.5s (tempo pra fonte Bangers carregar)
+    setTimeout(function () {
+      splashText.classList.add('visible');
+    }, 500);
+
+    // Fade-out de tudo após 2.5s
     setTimeout(function () {
       splash.classList.add('fade-out');
       setTimeout(function () {
         splash.remove();
-      }, 1500);
+      }, 2000);
     }, 2500);
   }
 
